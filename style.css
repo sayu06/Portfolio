@@ -1,0 +1,331 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body
+{
+    background-color:rgb(0 , 0,33);
+    color: white;
+}
+nav{
+     display: flex;
+     justify-content: space-around;
+     align-items: center;
+     height: 80px;
+     background-color:rgb(241, 178, 63);
+}
+.nav .social-icons{
+    font-size: 32px;
+    
+}
+.nav .name{
+    margin: 23px  50px;
+}
+nav ul{
+    display: flex;
+    justify-content: center;
+}
+nav ul li{
+    list-style: none;
+    margin: 0 23px;
+}
+nav ul li a{
+    text-decoration: none;
+    color: rgb(11, 11, 11);
+}
+nav ul li a:hover{
+    color:rgb(223, 253, 253);
+    font-size: 1.2rem;
+}
+.left{
+    font-size: 1.5rem;
+}
+.firstsection{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 20px 0;
+}
+.firstsection > div{
+    width: 30%;
+}
+.leftsection{
+    font-size: 2.2rem;
+}
+.leftsection .buttons{
+    padding: 20px 0;
+}
+.leftsection .btn{
+    padding: 15px;
+    background: rgb(7, 7, 7);
+    color: white;
+    border: 2px solid white;
+    border-radius: 6px;
+    font-size: 13px;
+    cursor: pointer;
+}
+.rightsection  img{
+    width: 80%;
+    margin: 50px 0;
+    
+}
+.purple{
+    color: rgb(170, 107, 228)
+}
+.secondSection{
+    max-width: 80vw;
+    margin: auto;
+}
+.secondSection h1{
+    font-size: 1.9rem;
+}
+main hr{
+    border: 10;
+    background: rgb(70, 67, 163);
+    height: 3px;
+    margin: 60px 84px;
+}
+
+/*progressbar*/
+.container {
+    width: 100%;
+    height: 70vh;
+    background: rgb(0 , 0,33);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.skills h2{
+    margin: 10px;
+    padding: 10px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin-top: 40px;
+    margin-bottom: 5px;
+    color: #fff;
+    font-size: 16px;
+}
+.progress-bar{
+    background: #959595;
+    width: 600px;
+    height: 10px;
+    border-radius: 5px;
+}
+.progress-bar div{
+    height: 10px;
+    border-radius: 5px;
+    width: 0%;
+
+}
+.progress-bar div span{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background: #222;
+    float: right;
+    margin-top: -15px;
+    margin-right: -20px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.html{
+    background: #e91e63;
+    animation: html 1s linear forwards;
+}
+.clang{
+    background: #cddc39;
+    animation: clang 1s linear forwards;
+}
+.javascript{
+    background: #00bcd4;
+    animation: javascript 1s linear forwards;
+}
+.java{
+    background: #ffeb3b;
+    animation: java 1s linear forwards;
+}
+.python{
+    background: #9c27b0;
+    animation: python 1s linear forwards;
+}
+
+
+.html span{
+    border: 1px solid #e91e63;
+}
+.clang span{
+    border: 1px solid #cddc39;
+}
+.javascript span{
+    border: 1px solid #00bcd4;
+}
+.java span{
+    border: 1px solid #ffeb3b;
+}
+.python span{
+    border: 1px solid #9c27b0;
+}
+
+@keyframes html{
+    100%{
+        width: 86%;
+    }
+}
+@keyframes clang{
+    100%{
+        width: 76%;
+    }
+}
+@keyframes javascript{
+    100%{
+        width: 80%;
+    }
+}
+@keyframes java{
+    100%{
+        width: 50%;
+    }
+}
+@keyframes python{
+    100%{
+        width: 70%;
+    }
+}
+
+/*about data*/
+.leftsection1{
+    font-size: 25px;
+}
+
+.secondSection > div{
+    width: 70%;
+    padding: 40px;
+}
+.element{
+    padding: 80px;
+}
+.secondSection div{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+   
+    margin-right: 30px 0;
+    
+}
+
+footer{
+    background-color:#2a232c;
+
+}
+.footer{
+    display: flex;
+    padding: 23px 122px;
+    justify-content: space-evenly;
+}
+.footer ul{
+   list-style: none;
+}
+.footer > div{
+    width: 223px;
+ }
+ footer .footer-rights{
+    text-align: center;
+    color: grey;
+    padding: 12px 0;
+ }
+ .thirdsection{
+    max-width: 80vw;
+    margin: auto;
+    height: 80vh;
+ }
+ .thirdsection .box{
+    background: white;
+    width: 80vw;
+    height: 2px;
+    margin: 56px 0;
+    display: flex;
+ }
+ .thirdsection .vertical{
+    height: 93px;
+    width: 1px;
+    background-color: white;
+    margin: 0 100px;
+ }
+ .image-top{
+    width: 30px;
+    position: relative;
+    top: -32px;
+    left: -9px;
+ }
+ .vertical-title{
+    position: relative;
+    top: 75px;
+    width: 150px;
+ }
+ .vertical-des{
+    position: relative;
+    top: 86px;
+    color: gray;
+    width: 150px;
+    font-size: 12px;
+ }
+
+ .thirdsection .buttons{
+    margin-top: 10px;
+}
+.btn{
+    margin-top: 10px;
+    padding: 9px;
+    background: rgb(7, 7, 7);
+    color: white;
+    border: 2px solid white;
+    border-radius: 600px;
+    font-size: 9px;
+    cursor: pointer;
+}
+
+.fourthsection .contact-left{
+    flex-basis: 35%;
+    width: 60px;
+    height: 30px;
+    text-align: right;
+}
+.fourthsection .contact-right{
+    flex-basis: 60%;
+    margin: 60px;
+    text-align: left;
+}
+.fourthsection{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 50px 0;
+}
+.fourthsection > div{
+    width: 30%;
+}
+.contact-left{
+    font-size: 1.2rem;
+}
+
+
+.footer li{
+    display: flex;
+    justify-content: center;
+}
+.footer ul {
+    list-style: none;
+    margin: 0 23px;
+}
+.footer ul a{
+    text-decoration: none;
+    color:rgb(182, 170, 170);
+}
+.footer ul a:hover{
+    color:rgb(76, 185, 185);
+    font-size: 1.2rem;
+}
