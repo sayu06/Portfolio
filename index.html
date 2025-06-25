@@ -1,282 +1,402 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--title of webpage-->
-    <title>Personal Portfolio Website</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sayali's Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/7df5640b57.js" crossorigin="anonymous"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
 
-    <!--google fonts link-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    body {
+      background-color: rgb(0, 0, 33);
+      color: white;
+      scroll-behavior: smooth;
+    }
 
-    <script src="https://kit.fontawesome.com/7df5640b57.js" crossorigin="anonymous"></script>
+    h1 {
+      text-align: center;
+      color: white;
+      margin-bottom: 20px;
+    }
 
-    <!--css file connect-->
-    <link rel="stylesheet" href="style.css">
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 40px;
+      height: 80px;
+      background-color: rgb(241, 178, 63);
+    }
+
+    nav .name {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+
+    nav ul li {
+      margin-left: 25px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: rgb(11, 11, 11);
+      font-weight: bold;
+    }
+
+    nav ul li a:hover {
+      color: rgb(223, 253, 253);
+      font-size: 1.1rem;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .home {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+      border-radius: 16px;
+      padding: 100px 20px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+      color: #fff;
+      animation: fadeIn 1.5s ease-in-out;
+      position: relative;
+    }
+
+    .home::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 16px;
+      z-index: 0;
+    }
+
+    .home h1,
+    .home p,
+    .home .btn {
+      position: relative;
+      z-index: 1;
+    }
+
+    .home h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      background: linear-gradient(to right, #00f2fe, #4facfe);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .home p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      max-width: 700px;
+      margin: 0 auto 30px;
+    }
+
+    .home .btn {
+      background-color: #00c6ff;
+      color: #fff;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 25px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      text-decoration: none;
+    }
+
+    .home .btn:hover {
+      background-color: #0072ff;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(-20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .about {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .skill {
+      background: #1e293b;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .skill h2 {
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+
+    .progress-bar {
+      background-color: #334155;
+      border-radius: 10px;
+      overflow: hidden;
+      height: 20px;
+    }
+
+    .bar {
+      height: 100%;
+      background: linear-gradient(to right, #00c6ff, #0072ff);
+      text-align: right;
+      padding-right: 10px;
+      line-height: 20px;
+      color: white;
+      font-weight: bold;
+      width: 0;
+      transition: width 1s ease-in-out;
+    }
+
+    .projects .project {
+      background: #1e293b;
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+    }
+
+    .projects .project img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-top: 10px;
+      opacity: 0.85;
+    }
+
+    .projects .project .links {
+      margin-top: 10px;
+    }
+
+    .projects .project .links a {
+      margin-right: 10px;
+      text-decoration: none;
+      color: #00c6ff;
+      font-weight: bold;
+    }
+
+    .projects .project .links a:hover {
+      color: #0072ff;
+    }
+
+    .contact form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .contact input,
+    .contact textarea {
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      background: #334155;
+      color: white;
+    }
+
+    .contact button {
+      background: white;
+      color: #1e293b;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #2a232c;
+      color: grey;
+    }
+  </style>
 </head>
-
 <body>
-    <header>
-        <nav>
-            <!--logo-->
-            <div class="social-icons">
-                <a href=""><i class="fa-solid fa-user"></i></a>
-                <div class="name">sayalisportfolio
-            
-       
-    </div>
-</div>
-            <!--navbar contents-->
-            <div class="right">
-                <ul>
-                    <li><a href="#home" class="nav_link active-lin">Home</a></li>
-                    <li><a href="#about" class="nav_link">About</a></li>
-                    <li><a href="#project" class="nav_link">Projects</a></li>
-                    <li><a href="#achievements" class="nav_link">Achievements</a></li>
-                    <li><a href="#contact" class="nav_link">Contact Me</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-
-    <main>
-        <section class="firstsection" id="home">
-            <!--left side content of home page-->
-            <div class="leftsection">
-    <span id="element"></span>
-    <br>
-   <div class="buttons">
-    <!-- Download Resume Button -->
-    <a href="D:/Documents/Resume/Demo_Resume.pdf" download class="btn">
-        Download Resume
-    </a>
-
-    <!-- GitHub Button -->
-    <a href="https://github.com/sayu06" target="_blank" class="btn">
-        Visit GitHub
-    </a>
-
-    <!-- LinkedIn Button -->
-    <a href="https://www.linkedin.com/in/sayali-yewate-92450a238" target="_blank" class="btn">
-        Visit LinkedIn
-    </a>
-</div>
-
-</div>
-
-            </div>
-
-            <!--right side image of home page-->
-            <div class="rightsection">
-                <img src="wb.png" alt="">
-            </div>
-        </section>
-        <!--line after home-->
-        <hr>
-
-        <!--about page-->
-        <section class="secondSection" id="about">
-            <h1>About Myself</h1>
-            <div class="leftsection1">
-                
-                <span id="element1"></span>
-             </div>
-          <div class="third">
-            <h1>Skills Devloped</h1>
-          </div>
-        </section>
-
- 
-
-         <!--progress bar -->
-        <div class="container">
-            <div class="skills">
-                <!--html progress bar-->
-                <h2>HTML</h2>
-                <div class="progress-bar">
-                    <div class="html"><span>86%</span></div>
-                </div>
-
-                <!--clang progress bar-->
-                <h2>C and C++</h2>
-                <div class="progress-bar">
-                    <div class="clang"><span>80%</span></div>
-                </div>
-
-                <!--javascript progress bar-->
-                <h2>JAVASCRIPT</h2>
-                <div class="progress-bar">
-                    <div class="javascript"><span>70%</span></div>
-                </div>
-
-                <!--java progress bar-->
-                <h2>JAVA</h2>
-                <div class="progress-bar">
-                    <div class="java"><span>50%</span></div>
-                </div>
-
-                <!--python progress bar-->
-                <h2>PYTHON</h2>
-                <div class="progress-bar">
-                    <div class="python"><span>76%</span></div>
-                </div>       
-            </div>
-        </div>
-        
-        <hr>
-        <section class="thirdsection" id="project">
-            <span class="text-gray">Here some project are created by me </span>
-            <h1>Projects</h1>
-            <div class="box">
-                <div class="vertical">
-                    <img class="image-top" src="devloper.png" alt="" class="src">
-                    <div class="vertical-title">
-                        Forigen Language E-Learning Website(Html , CSS , Php , MySql)
-                    </div>
-                    <div class="vertical-des">
-                        This a forgin language website and all forigen language we can learnt on this 
-                        website.Also here provided notes , some videos and after that also here provided the 
-                        certificate after the completion of all videos.
-                        <div class="button">
-                            <button class="btn">LinkedIn</button>
-                            <button class="btn">Github</button>
-                         </div>
-                    </div>
-                  
-                </div>
-               
-                <div class="vertical">
-                    <img class="image-top" src="shopping.jpg" alt="" class="src">
-                    <div class="vertical-title">
-                        LearnTrack Android App(Java , Firebase , Android)
-                    </div>
-                    <div class="vertical-des">
-                        This app provide central platform for parent, teacher , student. Reduce manual and paper based work like manual attendance , paper based test.
-                        <div class="button">
-                            <button class="btn">LinkedIn</button>
-                            <button class="btn">Github</button>
-                         </div>
-                    </div>
-                </div>
-                <div class="vertical">
-                    <img class="image-top" src="shopping.jpg" alt="" class="src">
-                    <div class="vertical-title">
-                        Desktop Shooping Application(Java , Advanced Java , MySql)
-                    </div>
-                    <div class="vertical-des">
-                        In this application we can buy any thing at home without going to shop.
-                        Also generated total bill for the products which one can buy. It is very helpful 
-                        and there many methods provided for payment.
-                        <div class="button">
-                            <button class="btn">LinkedIn</button>
-                            <button class="btn">Github</button>
-                         </div>
-                    </div>
-                </div>
-                <div class="vertical">
-                    <img class="image-top" src="shopping.jpg" alt="" class="src">
-                    <div class="vertical-title">
-                        Desktop Shooping Application(Java , Advanced Java , MySql)
-                    </div>
-                    <div class="vertical-des">
-                        In this application we can buy any thing at home without going to shop.
-                        Also generated total bill for the products which one can buy. It is very helpful 
-                        and there many methods provided for payment.
-                        <div class="button">
-                            <button class="btn">LinkedIn</button>
-                            <button class="btn">Github</button>
-                         </div>
-                    </div>
-                </div>
-
-            </div>
-
-        </section>
-        <!--breakline after skill-->
-        <hr>
-        
-        <section class="fourthsection" id="contact">
-        
-                        <div class="contact-left">
-                            <h1 class="sub-title">Contact Me</h1>
-                            <p>contact@sayali.com</p>
-                            <p>3567896435</p>
-                            <div class="social-icons">
-                                <a href="https://facbook.com"><i class="fa-brands fa-facebook"></i></a>
-                                <a href=""><i class="fa-brands fa-instagram"></i></a>
-                                <a href=""><i class="fa-brands fa-linkedin"></i></a>
-                                <a href=""><i class="fa-brands fa-github"></i></a>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-right">
-                          <form>
-                            <input type="text" name="Name" placeholder="Your Name" required>
-                            <input type="email" name="email" placeholder="Your Email" required>
-                            <textarea name="msg"  rows="6" placeholder="Your Message"></textarea>
-                            <button type="submit">Submit</button>
-                          </form>
-                        </div>
-            
-        </section>
+  <header>
+    <nav>
+      <div class="name">Sayali's Portfolio</div>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+<h1>  </h1>
+<br></br>
+  <main>
+    <section class="home" id="home">
+      <h1>Hello, I'm Sayali 👋</h1>
+      <p>A Computer Science student passionate about designing user-friendly, impactful applications with Java, Android, and Web Development. Explore my portfolio below!</p>
+      <a href="#projects" class="btn">View My Work</a>
+    </section>
+<br></br>
 <hr>
-    </main>
-   
-    <footer>
-        <div class="footer">
-            <div class="footer-fitst">
-                <h3>Sayali's Developer Portfolio</h3>
-            </div>
-            <div class="footer-second">
-                <ul>
-                    <a href="https://google.com"><li>Google</li></a>
-                    <a href="https://google.com"><li>Google</li></a>
-                    <a href="https://google.com"><li>Google</li></a>
-                    <a href="https://google.com"><li>Google</li></a>
-                    <a href="https://google.com"><li>Google</li></a>
-                </ul>
-            </div>
-            <div class="footer-third">
-                <ul>
-                    <a href="https://google.com"><li>Google</li></a>
-                    <a href="https://google.com"><li>Google</li></a>
-                    <a href="https://google.com"><li>Google</li></a>
-                    <a href="https://google.com"><li>Google</li></a>
-                    <a href="https://google.com"><li>Google</li></a>
-                </ul>
-            </div>
-            <div class="footer-fourth">
-                <ul>
-                    <a href="https://google.com"><li>Google</li></a>
-                    <a href="https://google.com"><li>Google</li></a>
-                    <a href="https://google.com"><li>Google</li></a>
-                    <a href="https://google.com"><li>Google</li></a>
-                    <a href="https://google.com"><li>Google</li></a>
-                </ul>
-            </div>
+    <section class="about" id="about">
+      <h1>About Me</h1>
+    <p>
+      I'm Sayali, a passionate Computer Science student at Tatyasaheb Kore Institute of Engineering and Technology.
+      I enjoy creating intuitive and efficient applications using Java, Android, and modern web technologies. My journey
+      in tech started with curiosity and has evolved into a dedicated pursuit of impactful digital solutions.
+<h1> </h1>
+    </p>
+    <ul>
+      <li>🔧 Skilled in Java, Android, Firebase, and Front-End Web Development.</li>
+      <li>🎓 Academic background with consistent distinction in all semesters.</li>
+      <li>📱 Built Android applications that streamline attendance and test management.</li>
+      <li>🚀 Always exploring new tools, frameworks, and opportunities for innovation.</li>
+      <li>💡 Passionate about leaning new concepts.</li>
+    </ul>
+    </section>
+<hr>
+    <section class="skills-section" id="skills">
+      <h1>Skills Developed</h1>
+      <div class="skills-grid">
+        <div class="skill">
+          <h2>HTML</h2>
+          <div class="progress-bar"><div class="bar" style="width: 86%">70%</div></div>
         </div>
-        <div class="footer-rights">
-            Copyright &#169; www.sayalisportfolio.com | All rights reserved
+        <div class="skill">
+          <h2>C and C++</h2>
+          <div class="progress-bar"><div class="bar" style="width: 80%">90%</div></div>
         </div>
-    </footer>
-    <!--typed js in github-->
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+        <div class="skill">
+          <h2>JavaScript</h2>
+          <div class="progress-bar"><div class="bar" style="width: 70%">70%</div></div>
+        </div>
+        <div class="skill">
+          <h2>Java</h2>
+          <div class="progress-bar"><div class="bar" style="width: 50%">80%</div></div>
+        </div>
+        <div class="skill">
+          <h2>Python</h2>
+          <div class="progress-bar"><div class="bar" style="width: 76%">80%</div></div>
+        </div>
+        <div class="skill">
+          <h2>Android</h2>
+          <div class="progress-bar"><div class="bar" style="width: 65%">60%</div></div>
+        </div>
+        <div class="skill">
+          <h2>Spring Boot</h2>
+          <div class="progress-bar"><div class="bar" style="width: 60%">50%</div></div>
+        </div>
+        <div class="skill">
+          <h2>MySql</h2>
+          <div class="progress-bar"><div class="bar" style="width: 70%">60%</div></div>
+        </div>
+      </div>
+    </section>
+<hr>
+    <section class="projects" id="projects">
+      <h1>Projects</h1>
+       <div class="project">
+      <h2>📱 LearnTrack Android App                       2025</h2>
+      <p>Description :
+     LearnTrack is an Android application designed to facilitate seamless communication between students, teachers, and parents. It helps reduce administrative workload in educational institutions by managing tasks like attendance tracking and test scheduling. The app enhances academic coordination and ensures that all stakeholders stay informed and engaged.
 
-  <!-- Setup and start animation! -->
+Technologies Used: Android, Firebase</p>
+      <div class="links">
+        <a href="https://github.com/sayu06" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/sayali-yewate-92450a238" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+
+
+      <div class="project">
+        <h2>🏥 Doctor Management System                   2024</h2>
+        <p>Description:
+The Doctor Management System helps patients efficiently manage their hospital visits. It allows users to book, cancel, or reschedule appointments while providing details about available doctors, their specialties, and timings. This system reduces patient wait times and streamlines the appointment process for better hospital management.</p>
+
+<p>Technologies Used: C++</p>
+	<div class="links">
+        <a href="https://github.com/sayu06" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/sayali-yewate-92450a238" target="_blank">LinkedIn</a>
+      </div>
+
+
+      </div>
+      <div class="project">
+        <h2>🌐 Foreign Language E-Learning Website      		   2023</h2>
+        <p>Description :
+ This web-based platform enables users to learn multiple foreign languages, including Spanish, French, and English. It offers a variety of learning resources such as videos, PPTs, and interactive quizzes to accommodate different learning preferences. Upon successful course completion, users receive a certification, encouraging consistent learning.</p>
+
+<p>Technologies Used: HTML, CSS, PHP, JavaScript</p>
+<div class="links">
+        <a href="https://github.com/sayu06" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/sayali-yewate-92450a238" target="_blank">LinkedIn</a>
+      </div>
+ 
+      </div>
+      <div class="project">
+        <h2>🛒 Shopping Desktop Application                2023</h2>
+        <p>This desktop-based shopping application provides users with an intuitive interface to browse, search, and purchase products from various categories. The application includes features such as user registration/login, product catalog display, cart management, order history, and admin control for managing inventory and user data. It is designed to simulate a real-world shopping experience in a desktop environment.</p>
+<p>Technologies Used: Java (Swing/AWT), JDBC, MySQL</p>
+<div class="links">
+        <a href="https://github.com/sayu06" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/sayali-yewate-92450a238" target="_blank">LinkedIn</a>
+      </div>
+
+      </div>
+    </section>
+ <hr>
+    <section class="contact" id="contact">
+      <h1>Contact Me</h1>
+      <form>
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea rows="5" placeholder="Your Message"></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Sayali's Portfolio | All Rights Reserved
+  </footer>
+
   <script>
-    var typed = new Typed('#element', {
-      strings: ['Hi, My name is Sayali and I am engineering student , web developer'],
-      typeSpeed: 50,
-    });
-  </script>
-
-<script>
-    var typed = new Typed('#element1', {
-      strings: ['hi i am Sayali Yewate and I am a student at the tatyasaheb kore institute of engineering and technology. I am majoring in computer science and teaching myself web development and java language through free code camp. My main focus these days is building accessible , inclusive products.'],
-      typeSpeed: 50,
+    // Animate skill bars on load
+    window.addEventListener('load', () => {
+      document.querySelectorAll('.bar').forEach(bar => {
+        const width = bar.style.width;
+        bar.style.width = '0';
+        setTimeout(() => {
+          bar.style.width = width;
+        }, 100);
+      });
     });
   </script>
 </body>
